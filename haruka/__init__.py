@@ -16,35 +16,35 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     LOGGER.error("You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting.")
     quit(1)
 
-ENV = bool(os.environ.get('ENV', False))
+ENV = bool(os.environ.get('ENV',True))
 
 if ENV:
-    TOKEN = os.environ.get('TOKEN', None)
+    TOKEN = os.environ.get('TOKEN',1504806635:AAGoSuAWcSd_xbWUsIYnV1iZLjJVaHYJHbU)
     try:
-        OWNER_ID = int(os.environ.get('OWNER_ID', None))
+        OWNER_ID = int(os.environ.get('OWNER_ID', 1150006224))
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
-    MESSAGE_DUMP = os.environ.get('MESSAGE_DUMP', None)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
+    MESSAGE_DUMP = os.environ.get('MESSAGE_DUMP', -1001191091051)
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", @UHAAHM)
 
     try:
-        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "1150006224").split())
     except ValueError:
         raise Exception("Your sudo users list does not contain valid integers.")
 
     try:
-        SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "").split())
+        SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "1150006224").split())
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "").split())
+        WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "1150006224").split())
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     WEBHOOK = bool(os.environ.get('WEBHOOK', False))
-    URL = os.environ.get('URL', "")  # Does not contain token
+    URL = os.environ.get('URL', "https://mismarshy.herokuapp.com")  # Does not contain token
     PORT = int(os.environ.get('PORT', 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
 
